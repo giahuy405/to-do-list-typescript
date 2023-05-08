@@ -1,0 +1,28 @@
+.tasks {
+
+    .task {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .checkBox {
+            display: flex;
+            align-items: end;
+
+            .taskNameDone {
+                text-decoration: line-through;
+                color: grey;
+            }
+        }
+    }
+
+    .taskAction {
+        button {
+            padding: 2px 5px;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    }
+
+}

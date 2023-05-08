@@ -1,0 +1,13 @@
+.box {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1.5rem 2rem;
+    margin-top: 40px;
+    border-radius: 6px;
+    
+    &>h2 {
+        text-align: center;
+        margin: 0;
+    }
+}
