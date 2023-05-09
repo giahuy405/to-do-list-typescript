@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styles from './todoList.module.scss'
 import TaskInput from '../TaskInput/TaskInput'
 import TaskList from '../TaskList/TaskList'
 import { Todo } from '../../@types/todo.types'
+import Title from '../Title/Title'
 interface HandleNewTodo {
   (todo: Todo[]): Todo[]
 }
@@ -84,10 +85,14 @@ const TodoList = () => {
     const todolistObject: Todo[] = JSON.parse(todolistJSON || '[]')
     setTodolist(todolistObject)
   }, [])
-
+  const address = useMemo(() => {
+    return {
+      street: '10 tran hugn dao'
+    }
+  },[])
   return (
     <div className={styles.box}>
-      <h2>To do list</h2>
+      <Title address={address} />
       <TaskInput addTodo={addTodo} currentTodo={currentTodo} editTask={editTask} finishEdit={finishEdit} />
       <TaskList todolist={todolistNotDone} handleCheck={handleCheck} startEdit={startEdit} deleteTask={deleteTask} />
       <TaskList

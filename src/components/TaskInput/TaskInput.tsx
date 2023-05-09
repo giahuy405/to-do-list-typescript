@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './taskInput.module.scss'
 import { Todo } from '../../@types/todo.types'
+import connect from '../../HOC/connect'
 interface Props {
   addTodo: (name: string) => void
   currentTodo: Todo | null
@@ -40,7 +41,6 @@ const TaskInput = (props: Props) => {
 }
 
 export default TaskInput
-
 
 // TaskInput.propTypes ={
 //   addTodo: PropTypes.func.isRequired,
